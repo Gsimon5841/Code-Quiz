@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <title>Code Quiz!</title>
+</head>
+
+<body>
+    <section id="gameStart">
+        <h1 class="codeQuiz">Code Quiz</h1>
+        <div id="startBtn">
+            <button class="start">
+                Start Quiz
+            </button>
+            <div id="viewScore">
+                <button class="highScoreBtn">High Scores</button>
+            </div>
+            
+        </section>
+    </div>
+
+    <section id="parent">
+        <div id="timerDisplay">
+
+
+        </div>
+        <h1 id="Questions-title">
+
+        </h1>
+        <div id="div-box">
+
+        </div>
+
+    </section>
+    <section id="highContainer">
+        <h1>Highscore</h1>
+        <p id="score"></p>
+        <label for="Initials"> Initials</label>
+        <input type="text" id="initials" name="initials">
+            <button onclick="submitScore()"> Submit</button>
+            <div>
+                <table id="listed">
+                    <tr>
+                        <th>Initials</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+    </section>
+
+
+
+    <script src="./assests/js/scripts.js"></script>
+</body>
+
+</html>

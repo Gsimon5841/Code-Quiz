@@ -2,15 +2,15 @@
 var timer = 100;
 var qnsIndex = 0;
 var buttonEL = document.querySelector(".start");
-
+var testTimer;
 
 function timerFunction() {
 
     document.getElementById("timerDisplay").textContent = `Time remaining: ${timer}`;
-    var testTimer = setInterval(function () {
-        if (timer == 0) {
+     testTimer = setInterval(function () {
+        if (timer <= 0) {
             document.getElementById("parent").setAttribute("hidden", "")
-            return clearInterval(testTimer);
+            quizBye();
         }
         timer--
         document.getElementById("timerDisplay").textContent = `Time remaining: ${timer}`
@@ -85,10 +85,7 @@ function nextQuestion(event) {
             timer -= 10
         }
         return quizBye()
-        //buttonEL.classList.remove("next-question");
-        //buttonEL.setAttribute("class", "start")
-        //qnsIndex = 0;
-        // === 100
+     
         startQuiz()
     } else {
         if (event.target.textContent == qnAns[qnsIndex].correctAns) {
@@ -112,11 +109,13 @@ function quizScores() {
         var td1 = document.createElement("td")
         var td2 = document.createElement("td")
         var tr = document.createElement("tr")
-        td1.textcontent = element[0]
+        td1.textContent = element[0]
         td2.textContent = element[1]
-        document.getElementById("listed").appendChild(tr);
+        console.log(td1)
+        console.log(td2)
         tr.appendChild(td1)
         tr.appendChild(td2)
+        document.getElementById("listed").appendChild(tr);
         console.log(element[0], element[1])
     })
     
@@ -132,12 +131,14 @@ function submitScore() {
 
 function quizBye() {
     var highContainer = document.getElementById("score")
+    clearInterval(testTimer)
     score = timer;
     highContainer.textContent =score;
     document.getElementById("timerDisplay").setAttribute("hidden","");
     document.getElementById("parent").setAttribute("hidden", "");
-    document.getElementById("Question-title").setAttribute("hidden", "")
+    document.getElementById("Questions-title").setAttribute("hidden", "")
     document.getElementById("div-box").setAttribute("hidden", "")
+    document.getElementById("highContainer").classList.remove("hide")
 
 }
 
